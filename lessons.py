@@ -1,21 +1,20 @@
-import requests
+import osa
 
-url = 'https://requestb.in/1d9cgac1'
-json = {
-    'month' : 'may',
-    'day' : '10',
-    'result' : '1:0',
-    'team' : 'manchester',
-}
-respounse = requests.post(url, data = '21.02.2018')
+url = 'http://www.webservicex.net/ConvertTemperature.asmx?WSDL'
 
-print(respounse.status_code)
+client = osa.client.Client(url)
+print(client.types)
 
-url2 = 'http://httpbin.org'
+response = client.service.ConvertTemp(Temperature=15.00, FromUnit='degreeFahrenheit', ToUnit='degreeCelsius')
 
-params = {
-    'id':[1,2,3],
-}
-respounse = requests.get(url2, params=params)
+print(response)
 
-print(respounse.json())
+url2 = 'http://fx.currencysystem.com/webservices/CurrencyServer4.asmx?WSDL'
+
+client2 = osa.client.Client(url2)
+response2 = client2.service.Currencies()
+
+print(response2.split(';'))
+
+response3 = client2.service.ConvertToNum(fromCurrency='EUR', toCurrency='RUB', amount=126.50, rounding=True)
+print(response3)
