@@ -16,8 +16,8 @@ def passw_gen(count_char):
 
 
 while True:
-    user_input = input('Ввдеите количество симоволов пароля:\n'
-                       'Для выхода введите "e"\n')
+    user_input = input('Enter the number of password characters:\n'
+                       'For exit enter "e"\n')
 
     if user_input == 'e':
         break
