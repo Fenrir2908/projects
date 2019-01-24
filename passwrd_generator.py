@@ -15,13 +15,13 @@ def passw_gen(count_char):
     return "".join(passwrd)
 
 
-while True:
-    user_input = input('Enter the number of password characters:\n'
-                       'For exit enter "e"\n')
+#while True:
+user_input = input('Enter the number of password characters:\n'
+                   'For exit enter "e"\n')
 
-    if user_input == 'e':
-        break
-    else:
-        passw = passw_gen(int(user_input))
+if user_input == 'e':
+    exit()
+else:
+    passw = passw_gen(int(user_input))
 
-        print(passw)
+print(passw)
